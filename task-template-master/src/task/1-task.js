@@ -24,7 +24,7 @@ export async function task(roundNumber) {
 
     // Insert a document to create the collection
 
-    search_term_document.map(async (term) => {
+    search_term_document.search_term.map(async (term) => {
 
       const postTitles = await crawl(term);
       
@@ -39,7 +39,7 @@ export async function task(roundNumber) {
         key_word: [term]
       });
 
-      console.log("Collection created with document ID:", result.insertedId);
+      console.log("Collection created with document ID:", result);
     });
     // const cid = await storeFile(postTitles);
     // await namespaceWrapper.storeSet("cid", cid);
