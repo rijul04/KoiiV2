@@ -8,7 +8,7 @@ export async function crawl(searchTerm) {
   // Set up puppeteer
   // set headless = false for visualization debugging, set headless = true for production
   const browser = await stats.puppeteer.launch({
-    headless: false,
+    headless: true,
     executablePath: stats.executablePath,
   });
 
@@ -50,3 +50,19 @@ export async function crawl(searchTerm) {
   await browser.close();
   return titles;
 }
+
+async function main() {
+  try {
+    // Call the crawl function and store the result in a variable
+    const titles = await crawl("Milk");
+
+    // Use forEach to iterate over the titles array
+    titles.forEach((title, index) => {
+      console.log(`Title ${index + 1}: ${title}`);
+    });
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
+
+main();
