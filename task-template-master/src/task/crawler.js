@@ -51,26 +51,19 @@ export async function crawl(searchTerm) {
   return titles;
 }
 
-async function main() {
-  try {
-    // Call the crawl function and store the result in a variable
-    const titles = await crawl("Milk");
+// async function main() {
+//   try {
+//     // Call the crawl function and store the result in a variable
+//     const titles = await crawl("Milk");
 
-    // Use forEach to iterate over the titles array
-    titles.forEach((title, index) => {
-      console.log(`Title ${index + 1}: ${title}`);
-    });
+//     // Use forEach to iterate over the titles array
+//     titles.forEach((title, index) => {
+//       console.log(`Title ${index + 1}: ${title}`);
+//     });
 
-    // let newObj = [];
-    // titles.map((title) => {
-    //   return newObj.push({name: title, sentiment: 2})
-    // });
+//   } catch (error) {
+//     console.error("An error occurred:", error);
+//   }
+// }
 
-    // console.log("nO", newObj);
-
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
-}
-
-main();
+// main();
