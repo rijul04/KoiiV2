@@ -1,4 +1,5 @@
 import PCR from "puppeteer-chromium-resolver";
+import Sentiment from "sentiment";
 
 export async function crawl(searchTerm) {
   const options = {};
@@ -41,22 +42,20 @@ export async function crawl(searchTerm) {
 }
 
 async function main() {
+
+  const sentiment = new Sentiment();
+  
   try {
     // Call the crawl function and store the result in a variable
-    const titles = await crawl("Milk");
+    const titles = await crawl("best");
 
     // Use forEach to iterate over the titles array
     titles.forEach((title, index) => {
+      const result = sentiment.analyze(title);
       console.log(`Title ${index + 1}: ${title}`);
+      console.log(`Sentiment score: ${result.score}`)
+      console.log(`Sentiment Analysis Details:`, result)
     });
-
-    // let newObj = [];
-    // titles.map((title) => {
-    //   return newObj.push({name: title, sentiment: 2})
-    // });
-
-    // console.log("nO", newObj);
-
   } catch (error) {
     console.error("An error occurred:", error);
   }
