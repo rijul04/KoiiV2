@@ -5,7 +5,6 @@ export async function setup() {
   // Define any steps that must be executed before the task starts
   console.log("CUSTOM SETUP");
 
-  const uri = "mongodb+srv://ri1jgo0l:milkman@koii.mf9pb.mongodb.net/?retryWrites=true&w=majority&appName=KOII";
 
   async function run() {
       const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
