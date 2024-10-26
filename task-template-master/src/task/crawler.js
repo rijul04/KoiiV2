@@ -61,13 +61,6 @@ async function main() {
       console.log(`Title ${index + 1}: ${title}`);
     });
 
-    // let newObj = [];
-    // titles.map((title) => {
-    //   return newObj.push({name: title, sentiment: 2})
-    // });
-
-    // console.log("nO", newObj);
-
   } catch (error) {
     console.error("An error occurred:", error);
   }
