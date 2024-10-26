@@ -7,7 +7,7 @@ export async function submission(roundNumber) {
    */
   try {
     console.log(`MAKE SUBMISSION FOR ROUND ${roundNumber}`);
-    return await namespaceWrapper.storeGet("value");
+    return await namespaceWrapper.storeGet("cid");
   } catch (error) {
     console.error("MAKE SUBMISSION ERROR:", error);
   }
