@@ -1,0 +1,4 @@
+You have minted 100000 tokens to your associated account DGRdxfAASm6ADQqm9SsWRrXxiMay8DrdbMaasTd24SR with a signature of 2MCaxtC1YxU6CC6YcQ2TzDJ2U3RS9tkaKgp4V6bYWTLFtgP2kR9AzBGY29E4WA9ZEdZDMa9QyNFg8gFYhn55X9Kb.
+
+Associated Account: DGRdxfAASm6ADQqm9SsWRrXxiMay8DrdbMaasTd24SR
+Token Update: Ak9EYH5BU4m9MVfnmpQ1GZtGueAEkNVTZLMECuRioXqS

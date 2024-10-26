@@ -5,10 +5,10 @@
 
 ## Task Name ##
 # Maximum 24 characters.
-task_name: "Task Name"
+task_name: "miLkZ test"
 
 ## Task Author ##
-author: "Koii"
+author: "milkmans"
 
 # Task Description Markdown ##
 # If you specify a markdown file, the description field will be ignored.
@@ -66,7 +66,7 @@ task_type: "KPL"
 
 ## Token Mint Address (ONLY for KPL tasks) ##
 # The Fire Token address is provided as an example.
-token_type: "FJG2aEPtertCXoedgteCCMmgngSZo1Zd715oNBzR7xpR"
+token_type: "HP1ND2gLmWBGUdhsbC9sHiczA3s7FSWEx29p3mtWH4AL"
 
 ## Total Bounty Amount ##
 # The total bounty amount that will be available for distribution over all rounds.
@@ -76,7 +76,7 @@ total_bounty_amount: 10
 ## Bounty Amount per Round ##
 # The maximum amount that can be distributed per round.
 # If the actual distribution per round exceeds this amount, the distribution list will fail.
-bounty_amount_per_round: 0.1
+bounty_amount_per_round: 0
 
 ## Allowed Failed Distributions ##
 # Number of retries allowed for the distribution list if it is fails audit.
@@ -105,7 +105,7 @@ requirementsTags:
 
 ## Tags ##
 # See https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#tags for available tag options.
-tags: ["Witness"]
+tags: ["Encode London"]
 
 # Environment ##
 # TEST or PRODUCTION
