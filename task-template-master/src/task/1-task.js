@@ -3,6 +3,7 @@
 import { crawl } from "./crawler.js";
 import { MongoClient } from 'mongodb';
 import { v4 as uuidv4 } from 'uuid'; 
+import Sentiment from "sentiment";
 
 
 export async function task(roundNumber) {
@@ -10,6 +11,9 @@ export async function task(roundNumber) {
   // The submission of the proofs is done in the submission function
   const uri = "mongodb+srv://ri1jgo0l:milkman@koii.mf9pb.mongodb.net/?retryWrites=true&w=majority&appName=KOII";
   const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  const sentiment = new Sentiment();
+
 
 
   console.log(`EXECUTE TASK FOR ROUND ${roundNumber}`);
@@ -27,16 +31,16 @@ export async function task(roundNumber) {
     search_term_document.search_term.map(async (term) => {
 
       const postTitles = await crawl(term);
-      
+
       let articleTitleInfoObj = [];
       postTitles.map((title) => {
-        return articleTitleInfoObj.push({name: title, sentiment: 2})
+        return articleTitleInfoObj.push({name: title, sentiment: sentiment.analyze(title)})
       });
 
       const result = await collection.insertOne({
         userId: uuidv4(),
         articleTitleInfo: articleTitleInfoObj,
-        key_word: [term]
+        key_word: term
       });
 
       console.log("Collection created with document ID:", result);
