@@ -11,6 +11,7 @@ Before proceeding, ensure you have the following software installed:
 
 The following dependencies need to be installed:
 npm install mongodb
+
 npm install mongob
 npm install puppeteer
 npm install puppeteer-chromium-resolver
