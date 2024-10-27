@@ -33,13 +33,19 @@ export async function task(roundNumber) {
       const postTitles = await crawl(term);
 
       let articleTitleInfoObj = [];
+      let calcAvgSentiment = 0;
       postTitles.map((title) => {
-        return articleTitleInfoObj.push({name: title, sentiment: sentiment.analyze(title)})
+        const analysedSentiment = sentiment.analyze(title);
+        calcAvgSentiment += analysedSentiment.score;
+        return articleTitleInfoObj.push({name: title, all_sentiment: analysedSentiment})
       });
+
+      calcAvgSentiment = calcAvgSentiment / postTitles.length;
 
       const result = await collection.insertOne({
         userId: uuidv4(),
-        articleTitleInfo: articleTitleInfoObj,
+        article_title_info: articleTitleInfoObj,
+        average_sentiment: calcAvgSentiment,
         key_word: term
       });
 
